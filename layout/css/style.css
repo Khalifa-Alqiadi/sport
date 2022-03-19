@@ -18,6 +18,7 @@
 .text-white{ color: white; }
 .bg-border{background-color: var(--border-color);}
 .text-border{ color: var(--border-color); }
+.text-ccc{color: #868686;}
 
 .d-flex{ display: flex;  }
 .flex-column{ flex-direction: column; }
@@ -37,15 +38,24 @@
 .text-uppercase{ text-transform: uppercase; }
 .text-center{text-align: center;}
 
+.lh{line-height: 1;}
+.fs-1{ font-size: 8rem; }
+.fs-2{ font-size: 3rem; }
+.fs-3{ font-size: 2rem; }
+.fs-4{ font-size: 1.3rem; }
 .fw{font-weight: bold;}
+
+.border-left{ border-right: 1px solid var(--border-color);  }
+
+.z-1{
+    z-index: 1;
+}
 html{
     font-size: 10px;
     font-family: "Acumin Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
     scroll-behavior: smooth;
 }
-a{
-    text-decoration: none;
-}
+a{text-decoration: none;}
 .container{
     min-height: 100vh;
     width: 100%;
@@ -74,46 +84,19 @@ img{
 }
 
 p{
-    color: white;
     text-align: left;
     font-size: 1.3rem;
     line-height: 1.9rem;
 }
 
 .cat{
-    text-transform: uppercase;
     transition: all .4s ease;
     font-size: 15px;
 }
-.cat i{
-    margin-right: 10px;
-}
-.cat span{
-    border-bottom: 2px solid var(--main-color);
-}
+.cat i{margin-right: 10px;}
+.cat span{border-bottom: 2px solid var(--main-color);}
 
-.date{
-    color: black;
-    font-weight: bold;
-}
-.date span{
-    color: var(--main-color);
-}
-
-h1{
-    font-size: 3rem;
-    color: white;
-    text-transform: uppercase;
-}
-
-.btn{
-    padding: 8px 25px;
-    font-size: 17px;
-    background-color: var(--main-color); 
-    color: white;
-    font-weight: bold;
-}
-
+.btn{padding: 8px 25px;}
 /* Start Header */
 
 #header{
@@ -125,14 +108,9 @@ h1{
     height: auto;
 }
 
-#header .header{
-    min-height: 8vh;
-}
+#header .header{min-height: 8vh;}
 
-#header .brand{
-    z-index: 10;
-    width: 50%;
-}
+#header .brand{width: 50%;}
 #header .brand img{
     height: 80px;
     width: 50px;
@@ -143,25 +121,19 @@ h1{
     height: 100%;
     padding: 0 10px;
 }
-#header .nav-list{
-    width: 50%;
-}
+#header .nav-list{width: 50%;}
 
 #header .nav-list ul{
     list-style: none;
-    position: absolute;
     width: 100vw;
     height: 100vh;
     left: 100%;
     top: 0;
-    z-index: 1;
     overflow-x: hidden;
     transition: .4s ease left;
 }
 
-#header .nav-list ul.active{
-    left: 0;
-}
+#header .nav-list ul.active{left: 0;}
 
 #header .nav-bar .nav-list-top{
     width: 100%;
@@ -177,48 +149,27 @@ h1{
     position: absolute;
 }
 
-#header .nav-bar .nav-list-top p{
+#header .nav-bar .nav-list-top .icon1{
     border-left: 1px solid var(--border-color);
+    padding: 20px;
+}
+#header .nav-bar .nav-list-top img{
+    height: 20px;
+    width: 40px;
 }
 #header .nav-list :where(input, button){
     border: 0;
     background-color: transparent;
 }
-#header .nav-list input{
-    width: 10%;
-}
-#header .nav-list button .fa{
-    font-size: 18px;
-}
+#header .nav-list input{width: 10%;}
 #header .nav-list ul :where(a, p){
-    font-size: 1.5rem;
     letter-spacing: 0;
     padding: 20px;
     display: block;
     transition: .3s ease color;
 }
 
-#header .nav-list ul a:hover{
-    color: var(--main-color);
-}
-
-#header .nav-list ul a::after{
-    content: attr(data-after);
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    color: rgba(240, 248, 255, 0.157);
-    font-size: 7rem;
-    letter-spacing: 50px;
-    z-index: -1;
-    transition: .3s ease letter-spacing;
-}
-
-#header .nav-list ul li:hover a::after{
-    transform: translate(-50%, -50%) scale(1);
-    letter-spacing: initial;
-}
+#header .nav-list ul a:hover{color: var(--main-color);}
 
 #header .hamburger{
     height: 60px;
@@ -259,21 +210,13 @@ h1{
     transition-property: top bottom;
 }
 
-#header .hamburger .bar::after{
-    top: 8px;
-}
+#header .hamburger .bar::after{top: 8px;}
 
-#header .hamburger .bar::before{
-    bottom: 8px;
-}
+#header .hamburger .bar::before{bottom: 8px;}
 
-#header .hamburger.active .bar::before{
-    bottom: 0;
-}
+#header .hamburger.active .bar::before{bottom: 0;}
 
-#header .hamburger.active .bar::after{
-    top: 0;
-}
+#header .hamburger.active .bar::after{top: 0;}
 .bx{
     font-size: 29px;
     color: white;
@@ -286,7 +229,6 @@ h1{
     background-image: url(../image/hero_image.jpg);
     background-size: cover;
     background-position: top center;
-    z-index: 1;
 }
 
 #hero::after{
@@ -320,11 +262,8 @@ h1{
     transition: opacity 3s; 
 }
 
-#hero .hero-info.active{
-    opacity: 1;
-}
+#hero .hero-info.active{opacity: 1;}
 #hero .hero-info .hero-img{
-    position: absolute;
     top: 25%;
     left: 40%;
     height: 75%;
@@ -338,22 +277,13 @@ h1{
     left: 5%;
     width: 10%;
     width: 200px;
-    z-index: 1;
 }
 
 #hero .hero-contact{
     top: 35%;
     left: 20%;
 }
-
-#hero h1{
-    font-size: 8rem;
-    font-weight: 900;
-    line-height: 1;
-}
-#hero p{
-    margin-top: 10px;
-}
+#hero p{margin-top: 10px;}
 
 #hero .indicators{
     width: 60%;
@@ -381,7 +311,6 @@ h1{
 #hero .card-items{
     top: 90%;
     left:49%;
-    z-index: 1000;
     width: 50%;
 }
 #hero .card-items .items{
@@ -395,17 +324,10 @@ h1{
     height: 150px;
 }
 
-#hero .card-items .items .info{
-    padding: 10px;
-}
+#hero .card-items .items .info{padding: 10px;}
 
-#hero .card-items .items h1{
-    font-size: 20px;
-    margin: 10px 0;
-}
-#hero .card-items p span{
-    border-bottom: 1px solid white;
-}
+#hero .card-items .items h1{margin: 10px 0;}
+#hero .card-items p span{border-bottom: 1px solid white;}
 /* End hero section*/
 
 /* Start About Section */
@@ -413,8 +335,6 @@ h1{
 #sports .sports{
     padding: 0;
     margin: 0;
-    align-items: flex-start;
-    z-index: 1000;
     min-height: 60vh;
 }
 
@@ -430,33 +350,22 @@ h1{
 }
 #sports .card .card-header div{width: 100%;}
 
-#sports .card .card-header p{
-    text-align: center;
-    margin-top: 50px;
-}
+#sports .card .card-header p{margin-top: 50px;}
 #sports .card .card-body{width: 90%;}
 
 #sports .vs p{font-size: 12px;}
 
-#sports .card .card-body img{
-    width: 50%;
-}
+#sports .card .card-body img{width: 50%;}
 
-#sports .card .card-body h2{
-    width: 30%;
-    font-size: 18px;
-}
+#sports .card .card-body h2{width: 30%;}
+
 #sports .card .card-footer{
     width: 50%;
     margin-top: 20px;
 }
-#sports .card .card-footer p{
-    text-align: center;
-    letter-spacing: 1px;
-}
-#sports .center{
-    background-color: #091e3f;
-}
+#sports .card .card-footer p{letter-spacing: 1px;}
+
+#sports .center{background-color: #091e3f;}
 
 /* End Sports Section */
 /* Start News Section */
@@ -472,19 +381,13 @@ h1{
     width: 25%;
 }
 
-.news .news-items .text{
-    justify-content: flex-start;
-}
 .news .news-items .item h1{
-    font-size: 8rem;
     width: 20%;
     letter-spacing: 0;
-    line-height: .8;
 }
-.news .news-items .item h2{
-    text-align: center;
-    margin-bottom: 15px;
-}
+
+.news .news-items .item h2{margin-bottom: 15px;}
+
 .news .news-items .item .border{
     width: 80%;
     height: 70%;
@@ -515,15 +418,11 @@ h1{
     left: 60%;
     z-index: 10;
 }
-.news .news-items .item .efiect h1{font-size: 4rem;}
-.news .news-items .item .efiect h2{font-size: 4rem;}
 
 .news p{color: #5e5b5b;}
-.news .news-items .item .efiect p{
-    font-size: 20px;
-    text-align: center;
-    margin-top: -20px;
-}
+
+.news .news-items .item .efiect p{margin-top: -20px;}
+
 .news .news-items .item img{
     height: 80%;
     top: 10%;
@@ -544,7 +443,6 @@ h1{
 
 .news .news-items .numbers .number{width: 90%;}
 .news .news-items .numbers :where(.left, .right){
-    text-align: center;
     width: 30%;
 }
 .news .news-items .number .left::before,
@@ -588,18 +486,20 @@ h1{
     left: 35%;
     top: 37%;
 }
-.news .news-items .numbers .center h1{
-    margin:  auto 30%;
-}
+.news .news-items .numbers .center h1{margin: auto 30%;}
 
 .about .text-title{
     width: 85%;
     margin-bottom: 20px;
 }
-.about .text-title h1{font-size: 7rem;}
-.about .about-items{height: 70vh;}
+
+.about .about-items{
+    height: 70vh;
+}
+.about .about-items .items{ width: 100%; }
 
 .about .about-items .after{overflow: hidden;}
+
 .about .about-items .after::after{
     content: "";
     position: absolute;
@@ -623,8 +523,6 @@ h1{
     width: 50%;
     top: 65%;
     left: 40%;
-    z-index: 1;
-
 }
 .about .info .circle{
     width: 80px;
@@ -645,40 +543,37 @@ h1{
 }
 .about .info h1{
     margin: 10px 0;
-    font-size: 20px;
     width: 80%;
 }
 .about .logo{
     left: 0%;
     font-size: 25rem;
     top: 68%;
-    width: 30%;
+    width: 27%;
     height: 43%;  
     z-index: 1;
 }
 
 .about .logo .img2{
     left: 15%;
-    top: 13%;
+    top: 16%;
 }
 .about .items-1{
     width: 50%;
     height: 80%;
     top: 10%;
     left: -7%;
-    z-index: 1; 
 }
 
 .about .items-1 .info{
     background-color: #e7e3e3;
-    top: 61%;
+    top: 65%;
     width: 60%;
     padding: 10px;
     box-shadow: 0px 10px 30px 5px #9e9e9e;
 }
 .about .items .item{
     align-items: flex-end;
-    width: 100%;
     height: 80%;
     margin-top: 35px;
 }
@@ -691,7 +586,6 @@ h1{
 }
 .about .items .item .item-box img{width: 40%;}
 .about .items .item .item-box .left{padding: 10px;}
-.about .items .item .item-box .left h1{font-size: 20px;}
 /* End News Section */
 
 /* Start Services Section */
@@ -704,10 +598,8 @@ h1{
     padding: 10px;
     margin: 10px;
 }
-.services .all-items h1{
-    font-size: 23px;
-    margin: 20px 0;
-}
+.services .all-items h1{margin: 20px 0;}
+
 .services .all-items .efict{
     font-size: 20rem;
     left: 40%;
@@ -736,7 +628,6 @@ h1{
 .store .image{
     height: 100%;
     width: 75%;
-    z-index: 1;
 }
 
 .store .image img{
@@ -750,7 +641,6 @@ h1{
     margin-top: 20px;
     width: 10%;
     font-size: 5rem;
-    line-height: 1;
 }
 .store .image .num{
     top: 10%;
@@ -765,9 +655,7 @@ h1{
 .store .image .num h2{
     top: 65%;
     left: 100%;
-    font-size: 20px;
 }
-.store .box{z-index: 1;}
 
 .store .box1{
     width: 6%;
@@ -781,10 +669,7 @@ h1{
     top: 0%;
     left: 79%;
 }
-.store .box2 .fa{
-    margin: 40%;
-    font-size: 20px;
-}
+.store .box2 .fa{margin: 40%;}
 .store .box3{
     width: 4%;
     height: 13%;
@@ -812,6 +697,43 @@ h1{
     left: 50%;
 }
 /* End store section */
+
+/* Start Icons */
+.icons{
+    min-height: 70vh;
+}
+.icons .header{
+    width: 90vw;
+    height: 30vh;
+    margin-top: 5%;
+}
+.icons .header hr{
+    height: 1px;
+    width: 100%;
+}
+.icons .header img{
+    width: 5%;
+    height: 60%;
+    filter: grayscale(1);
+}
+.icons .body{
+    flex-wrap: wrap;
+    width: 40%;
+}
+.icons .body .icon{
+    margin: 15px 20px;
+    width: 12%;
+}
+.icons .body .icon img{width: 60%;}
+
+/* End Icons */
+
+/* Start footer */
+.footer{ min-height: 60vh; }
+.footer .row{ width: 80vw; height: 60vh;}
+.footer .card{ height: 60%; width: 100%;}
+.footer .card-header{ margin: 30% 0; }
+/* End footer */
 
 @media (min-width:992px){
     #header .hamburger{
